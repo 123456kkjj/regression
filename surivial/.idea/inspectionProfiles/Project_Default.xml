@@ -1,0 +1,35 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="4">
+            <item index="0" class="java.lang.String" itemvalue="yarg" />
+            <item index="1" class="java.lang.String" itemvalue="certifi" />
+            <item index="2" class="java.lang.String" itemvalue="charset-normalizer" />
+            <item index="3" class="java.lang.String" itemvalue="pipreqs" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="list.release" />
+          <option value="utils.Regression.CoxRegressor" />
+          <option value="utils.test.start_times" />
+          <option value="utils.test.end_times" />
+          <option value="str.shape" />
+          <option value="list.keys" />
+          <option value="list.fit" />
+          <option value="list.find_best_ensemble" />
+          <option value="list.predict" />
+          <option value="list.concordance_index" />
+          <option value="str.ctime" />
+          <option value="list.append" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
