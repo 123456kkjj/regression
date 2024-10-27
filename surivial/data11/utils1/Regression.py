@@ -28,7 +28,7 @@ class Regression:
         创建集成回归模型
         """
         gpr = GaussianProcessRegressor()
-        kg = KNeighborsRegressor()
+        # kg = KNeighborsRegressor()
         dt = DecisionTreeRegressor()
         rf = RandomForestRegressor(n_estimators=200)
         ada = AdaBoostRegressor()
@@ -42,7 +42,7 @@ class Regression:
 
 
 
-        self.ensembles = [gbr,rf,dt,brg,xgb,lgbm,ada,gpr,cat,kg,lg]
+        self.ensembles = [gbr,rf,dt,brg,xgb,lgbm,ada,gpr,cat,lg]
         # self.ensembles = [ lg]
 
 

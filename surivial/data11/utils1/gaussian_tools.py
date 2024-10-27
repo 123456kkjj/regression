@@ -46,7 +46,8 @@ def get_gaussian_boundary(data, n_components=5, show = False):
     """
     print('data-37', data.shape)
     X = data.reshape(-1, 1)  # 将数据变成一列
-
+    imputer = SimpleImputer(strategy='mean')
+    X = imputer.fit_transform(X)
     # X = np.where(np.isnan(X), 0, X)  # 使用0来填充NaN值
     # X = data-37.reshape(-1, 1)  # 将数据变成一列
     # # X = X.fillna(0)
@@ -110,6 +111,9 @@ def showfigure(weights, means, covars, data_vector, gaussian_boundary):
     """
     for i, (w, m, c) in enumerate(zip(weights, means, covars)):  # zip是将对象打包成元组，每一个高斯分量画出一个概率密度曲线
         x = np.arange(min(data_vector), max(data_vector), 0.00001)  # 从最大值到最小值直接按照0.0001为步长生成列表
+        # 为避免范围相同的问题，增加一个微小的范围
+
+
         y = []
         for j in x:
             y.append(w * _gaussian(j, m, c))  # y代表着概率密度乘以权重
