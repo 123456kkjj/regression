@@ -87,6 +87,9 @@ import json
 import numpy as np
 import pandas as pd
 import warnings
+
+from surivial.data11.utils1.Regression import extract_feature_for_acc
+
 warnings.filterwarnings("ignore", message="KMeans is known to have a memory leak on Windows with MKL")
 
 from surivial.data11.utils1.feature_important_tools import load_feature_impts_from_dir
@@ -97,7 +100,9 @@ if __name__ == '__main__':
     treatment = 'yes'
     WORK_PATH = './'
     n_feature =5
-    Data_path = os.path.join(r'E:\desktop\Ensemble-regression-main\original\data\mircorna-377-1.csv')
+    num_iterations=2
+    times_for_a_work=5
+    Data_path = os.path.join(r'E:\desktop\Ensemble-regression-main\original\data\TCGA-GBM.csv')
     ####################################################################################################################
     vimps_save_dir = os.path.join(WORK_PATH, r'E:\desktop\Ensemble-regression-main\original\vimps\all')
     ####################################################################################################################
@@ -108,6 +113,10 @@ if __name__ == '__main__':
     # 划分特征和目标变量
     X = data.drop('days_to_death', axis=1)  # 假设'days_to_death'是目标变量
     y = data['days_to_death']
+    for i in range(num_iterations):
+        print(f"Running iteration {i + 1}/{num_iterations}")
+        num = i + 1
+        extract_feature_for_acc(X, y, n_feature, times_for_a_work, vimps_save_dir)
     ####################################################################################################################
     ####################################################################################################################
     # #################### 使用GMM选出重要特征 ####################
