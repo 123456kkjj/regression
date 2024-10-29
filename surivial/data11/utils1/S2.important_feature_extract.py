@@ -100,8 +100,8 @@ if __name__ == '__main__':
     treatment = 'yes'
     WORK_PATH = './'
     n_feature =5
-    num_iterations=2
-    times_for_a_work=10
+    num_iterations=5
+    times_for_a_work=12
     Data_path = os.path.join(r'E:\desktop\Ensemble-regression-main\original\data\TCGA-GBM.csv')
     ####################################################################################################################
     vimps_save_dir = os.path.join(WORK_PATH, r'E:\desktop\Ensemble-regression-main\original\vimps\all')
